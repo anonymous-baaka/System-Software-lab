@@ -1,0 +1,34 @@
+
+org 100h
+
+mov bl,05h 	        MOVER BREG,X		;X=NUMBER    
+mov bh,00h	
+mov cl,bl  	        MOVER CREG,X
+mov ch,00h	
+
+mov ax,cx	          MOVER AREG,X
+dec cl		          SUB CL,ONE		;ONE=1
+
+again:		          AGAIN
+mul cx		          MOVM CREG,TEMP  
+		                MUL AREG,TEMP 
+                    
+dec cx		          SUB CREG,ONE
+jz end		          COMP CREG,ZERO		;ZERO=0
+
+jmp again	          BC EQ LAST
+		                BC ANY AGAIN
+		
+		                LAST STOP
+		
+		                X DC '5'
+		                ONE DC '1'
+		                ZERO DC '0'
+                    TEMP DS 1
+		
+
+		
+                    END
+
+end:
+ret

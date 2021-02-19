@@ -1,0 +1,16 @@
+START 101
+READ X             	101		  09 00 110
+READ Y			        102		  09 00 111
+READ Z			        103		  09 00 112	
+MOVER AREG,X		    104		  04 01 110
+ADD AREG,Y		      105		  01 01 111
+ADD AREG,Z		      106		  01 01 112
+MOVEM AREG,RESULT	  107		  05 01 113
+PRINT RESULT		    108		  10 00 113
+STOP			          109		  00 00 000
+
+X DS 1			        110	
+Y DS 1			        111
+Z DS 1		        	112
+RESULT DS 1		      113	
+END

@@ -1,0 +1,4 @@
+lines = 4
+words= 7
+characters= 33
+blank= 3
